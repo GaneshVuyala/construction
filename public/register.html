@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construction Vehicle Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Construction Vehicle Registration Form</h1>
+  <form action="/registerVehicle" method="post" enctype="multipart/form-data">
+    <label for="name">Owner Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter owner's name" required>
+    
+    <label for="vehicleType">Vehicle Type:</label>
+    <select id="vehicleType" name="vehicleType" required>
+      <option value="" disabled selected>Select construction vehicle type</option>
+      <option value="Excavator">Excavator</option>
+      <option value="Bulldozer">Bulldozer</option>
+      <option value="Backhoe Loader">Backhoe Loader</option>
+      <option value="Dump Truck">Dump Truck</option>
+      <option value="Crane">Crane</option>
+      <option value="Concrete Mixer">Concrete Mixer</option>
+      <option value="Motor Grader">Motor Grader</option>
+      <option value="Wheel Loader">Wheel Loader</option>
+      <option value="Paver">Paver</option>
+      <option value="Roller (Compactor)">Roller (Compactor)</option>
+    </select>
+    
+    <label for="vehicleNumber">Vehicle Number:</label>
+    <input type="text" id="vehicleNumber" name="vehicleNumber" placeholder="Enter vehicle number" required>
+    
+    <label for="registrationNumber">Registration Number:</label>
+    <input type="text" id="registrationNumber" name="registrationNumber" placeholder="Enter registration number" required>
+    
+    <label for="mobile">Mobile Number:</label>
+    <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" title="10-digit phone number" required>
+    
+    <label for="licenseNumber">Driver License Number:</label>
+    <input type="text" id="licenseNumber" name="licenseNumber" placeholder="Enter driver license number" required>
+    
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" placeholder="Enter location" required>
+    
+    <label for="additionalInfo">Additional Information:</label>
+    <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Enter any additional details (optional)"></textarea>
+    
+    <label for="vehicleImage">Upload Vehicle Image:</label>
+    <input type="file" id="vehicleImage" name="vehicleImage" accept="image/*" required>
+    
+    <button type="submit">Register Vehicle</button>
+  </form>
+</body>
+</html>
+
