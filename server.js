@@ -10,12 +10,10 @@ require('dotenv').config(); // Loads environment variables from .env file
 
 // --- App Configuration ---
 const app = express();
-const port = 1337;
-
+const port = process.env.PORT || 1337;
 // --- Database Configuration ---
-const mongoUrl = "mongodb+srv://245122749038:245122749038@cluster0.zml6h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const dbName = 'ganeshvuyala';
-const client = new MongoClient(mongoUrl);
+const client = new MongoClient(process.env.MONGO_URL);
 let db;
 
 // --- Middleware Setup ---
